@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(174, 129, 215);
+}
+#container{
+    background-color: rgb(178, 226, 55);
+    border: 5px solid #000000;
+    height: 275px;
+    width: 750 px;
+    margin: auto;
+    text-align: center;
+
+}
+p{
+    color: aliceblue;
+}
+input{
+    width: 100px;
+    margin: 25px auto;
+
+}
+#btn{
+    margin: 25px auto auto 5px;
+}
