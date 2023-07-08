@@ -1,19 +1,27 @@
 let btn = document.getElementById('btn');
 let output = document.getElementById('outputtext');
 let total = 0;
-
-let number = Math.floor(Math.random() * 7) + 1;
-console.log(number);
+let gameOver = false;
 
 btn.addEventListener('click', function() {
     let input = parseInt(document.getElementById('userInput').value);
 
-    if (input === number) {
-        output.innerHTML = 'You are Out!';
-        output.innerHTML = `Batsman made ${input}. Total runs: ${total}`;
-    } else if (input >= 1 && input <= 6) {
+    if (input >= 1 && input <= 6) {
+        let botRun = Math.floor(Math.random() * 6) + 1;
         total += input;
-        output.innerHTML = `Batsman made ${input}. Total runs: ${total}`;
+        output.innerHTML = `You made ${input}. Bot made ${botRun}. Total runs: ${total}`;
+
+        if (input === botRun)  {
+            output.innerHTML += '<br>You\'re out!';
+          gaveOver = true;
+          total = 0;  
+        }
+
+        if (total === 50) {
+            output.innerHTML += '<br>Hurray!....It\'s a half-century!';
+        } else if (total === 100) {
+            output.innerHTML += '<br>Wow...Achievement unlocked: 100 RUNS made!';
+        }
     } else {
         output.innerHTML = 'Please choose runs between 1 and 6';
     }
